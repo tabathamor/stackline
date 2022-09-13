@@ -5,20 +5,16 @@ Chartjs.register(
     Title, Tooltip, LineElement, Legend, CategoryScale, LinearScale, PointElement
 )
 Chartjs.defaults.scale.grid.display = false;
-//  Chartjs.defaults.scale.ticks..display = false;
-
-
-
+Chartjs.defaults.plugins.legend.display =false;
 
 const BarChar = () => {
     const [data, SetData] = useState({
-        type: "scatter",
         data: {
             options: {
+                responsive: true,
                 legend: {
                     display: false
                  },
-                responsive: true,
                 scales: {
                     y: {
                         beginAtZero: true,
@@ -63,12 +59,10 @@ const BarChar = () => {
         
     },
 
-
     )
     return (
-        <div className="chartBox">
+        <div className="chartBox" style={{height:'600px',width:'1200px'}}>
             <Line data={data.data} ></Line>
-
         </div>
     )
 }

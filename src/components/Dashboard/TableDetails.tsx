@@ -25,9 +25,15 @@ export const numberFormat = (value: number) =>
         currency: 'USD'
     }).format(value);
 
-export const formatDate = Moment().format('DD-MM-YY')
+
+ export const dateFormat = (date: Date) => 
+ `${new Intl.DateTimeFormat('en-US', 
+ { dateStyle: 'short',
+  timeStyle: "medium" 
+}).format(date)}`;
 
 const TableDetails = (props: Props) => {
+    const formatDate = Moment().format('DD-MM-YY');
 
     return (
         <>
@@ -43,9 +49,8 @@ const TableDetails = (props: Props) => {
                 </thead>
                 <tbody>
                     {props.report.map((datass) => (
-                        
                         <tr className="subtitle text-center">
-                            <th scope="row">{datass.weekEnding}</th>
+                            <th scope="row">{(datass.weekEnding)}</th>
                             <td>  {currencyFormat(datass.retailSales)}</td>
                             <td>{currencyFormat(datass.wholesaleSales)}</td>
                             <td>{currencyFormat(datass.unitsSold)}</td>

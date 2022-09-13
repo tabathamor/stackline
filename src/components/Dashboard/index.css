@@ -11,7 +11,7 @@
 .dashboardCard-hy {
     padding: 20px;
     background-color: #fff;
-    margin: 15px 15px 10px 0px;
+    margin: 15px 15px 50px 0px;
     border-radius: 1px;
     box-shadow: 0px 1px 1px 0px #d5d4d4;
   }
@@ -67,4 +67,5 @@
   font-size: 12px;
   color: rgb(70, 70, 70, 0.5);
 }
+
 
